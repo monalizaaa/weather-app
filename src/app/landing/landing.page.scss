@@ -1,0 +1,35 @@
+.bg {
+  --ion-background-color: rgb(255, 255, 255);
+  --ion-background-color: linear-gradient(
+    180deg,
+    rgb(248, 225, 178) 0%,
+    rgb(221, 133, 16) 100%
+  );
+  --ion-text-color: rgb(133, 68, 68);
+}
+.detail {
+  bottom: 5%;
+  margin: 50px;
+  text-align: center;
+
+  p {
+    color: rgb(133, 68, 68);
+    font-size: 1em;
+    font-weight: 300;
+  }
+  span {
+    color: rgb(133, 68, 68);
+    font-size: 1.3em;
+    font-weight: 500;
+  }
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+ion-button {
+  --background: rgb(255, 202, 95) !important;
+}

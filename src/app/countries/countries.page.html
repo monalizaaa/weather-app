@@ -1,0 +1,80 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="landing"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div>
+    <ion-searchbar
+      animated="true"
+      color="none"
+      [(ngModel)]="countryName"
+      (ngModelChange)="ngOnInit()"
+      placeholder="Search for Country"
+    ></ion-searchbar>
+  </div>
+  <div *ngIf="!loading">
+    <ion-item
+      ><span>Common Name</span>
+      <h3 slot="end">{{name}} ({{cca3}})</h3>
+    </ion-item>
+    <ion-item *ngIf="native_name"
+      ><span>Native Name</span>
+      <h3 slot="end">{{native_name.official}}</h3>
+    </ion-item>
+    <ion-item
+      ><span>Capital</span>
+      <h3 slot="end">{{capital}}</h3>
+    </ion-item>
+    <ion-item
+      ><span>Language</span>
+      <h3 slot="end">{{lang_name1}} {{lang_name2}}</h3>
+    </ion-item>
+    <ion-item
+      ><span>Region</span>
+      <h3 slot="end">{{region}}</h3>
+    </ion-item>
+    <ion-item
+      ><span>Sub-Region</span>
+      <h3 slot="end">{{subregion}}</h3>
+    </ion-item>
+    <ion-item
+      ><span>Time Zone</span>
+      <h3 slot="end">{{timezone}}</h3>
+    </ion-item>
+    <ion-item
+      ><span>Currency</span>
+      <h3 slot="end">{{currency.name}}</h3>
+    </ion-item>
+    <ion-item
+      ><span>Currency Symbol</span>
+      <h3 slot="end">{{currency.symbol}}</h3>
+    </ion-item>
+    <ion-item>
+      <span>Area</span>
+      <h3 slot="end">{{area}} km²</h3>
+    </ion-item>
+    <ion-item>
+      <img [src]="flag_obj.png" alt="Country Flag" />
+    </ion-item>
+  </div>
+  <div *ngIf="loading" class="noData">
+    <div class="align">
+      <div class="center">
+        <img src="" alt="" />
+      </div>
+      <div class="center">
+        <span
+          style="
+            font-size: 5rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 25px;
+          "
+          >Search Country to Load data
+        </span>
+      </div>
+    </div>
+  </div>
+</ion-content>
